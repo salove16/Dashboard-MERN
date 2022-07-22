@@ -11,6 +11,15 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const employee = await Employee.findById(req.params.id).lean().exec();
+    return res.status(201).send(employee);
+  } catch (err) {
+    return res.status(400).send({ message: err.message });
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const employee = await Employee.create(req.body);

@@ -22,10 +22,10 @@ export const SignUp = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(name,value)
+   
     setText({ ...text, [name]: value });
   };
-  // console.log(text)
+
 
   const signupReq = async (e) => {
     try {
@@ -92,7 +92,7 @@ export const SignUp = () => {
             <TextField
               required
               fullWidth
-              id="name"
+              id="password"
               label="password"
               name="password"
               type="password"

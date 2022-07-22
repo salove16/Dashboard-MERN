@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 // import { DataGrid } from '@mui/x-data-grid';
 // import Box from '@mui/material/Box';
 import "./Table.css"
-
+import {useNavigate} from "react-router-dom"
 export const Table = () => {
     const [data,setData]=useState()
-
+const navigate =useNavigate()
     useEffect(()=>{
       getData()
     },[])
@@ -22,7 +22,7 @@ export const Table = () => {
     }
     
 const handleEdit=(id)=>{
-
+navigate(`/${id}/edit`)
     
 }
 
