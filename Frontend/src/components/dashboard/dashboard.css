@@ -1,0 +1,13 @@
+.dashboard{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(78, 60, 181);
+   
+}
+.dashboard .box{
+    margin-top:20vh ;
+}
+.box div{
+    text-align: center;
+}

@@ -21,7 +21,7 @@ app.use(cors());
 
 app.use("/users", userController);
 
-app.post("/register", register);
+app.post("/signup", register);
 
 app.post("/login", login);
 
