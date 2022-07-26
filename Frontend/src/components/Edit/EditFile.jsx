@@ -69,9 +69,9 @@ export const EditFile = () => {
           profile_pic: profile_pic||Data.profile_pic,
         };
       }
-      console.log(payload);
+      
 
-      let res = await fetch(`http://localhost:4000/employee/${id}`, {
+  let res = await fetch(`http://localhost:4000/employee/${id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -80,9 +80,13 @@ export const EditFile = () => {
       });
       //   console.log(res)
       let data = await res.json();
-      navigate("/table");
+
+alert("Updated Successfully")
+ navigate("/table");
     } catch (error) {
       console.log({ message: error.message });
+      alert("Nothing Updated ")
+      navigate("/table");
     }
   };
 
@@ -187,7 +191,7 @@ export const EditFile = () => {
                 <Button
                   variant="contained"
                   type="submit"
-                  sx={{}}
+                  sx={{width:'100%'}}
                   onClick={updateReq}
                 >
                   update

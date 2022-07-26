@@ -40,7 +40,7 @@ export const SignUp = () => {
           password: password,
         };
       }
-      console.log(payload);
+      // console.log(payload);
 
       let res = await fetch("http://localhost:4000/signup", {
         method: "POST",
@@ -51,7 +51,13 @@ export const SignUp = () => {
       });
     //   console.log(res)
       let data = await res.json();
-      navigate("/login");
+      console.log(data,"456214521542")
+      if(data.message=="Email already exists"||data.message=="undefined"||payload==undefined){
+        alert("This Email is alreday in use by another account")
+      }else{
+        alert("SignUp Successful")
+        navigate("/login");
+      }
     } catch (error) {
       console.log({ message: error.message });
     }
@@ -104,7 +110,7 @@ export const SignUp = () => {
            </Grid> 
         
           <Grid item xs={12} sm={12} display="flex" justifyContent="space-between">
-            <Button variant="contained" type="submit" sx={{}}   onClick={signupReq}>SignUp</Button>
+            <Button variant="contained" type="submit" sx={{width:'25%'}}   onClick={signupReq}>SignUp</Button>
       
             <Typography >
             Already have an Account? <Link to="/login">login</Link>

@@ -1,10 +1,16 @@
 import { Table } from '../table/Table'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Sidebar } from '../Sidebar/Sidebar'
 import { Dashboard } from '../dashboard/Dashboard'
 import {Routes,Route} from "react-router-dom"
 import { EditFile } from '../Edit/EditFile'
+import {AuthContext} from "../PrivateRoute/AuthContext"
 export const RouterComponent = () => {
+const {checkAuth}=useContext(AuthContext)
+
+useEffect(()=>{
+  checkAuth()
+},[])
 
   return (
     <div style={{display:'flex'}}>

@@ -9,18 +9,23 @@ import {
   Container,
   Paper,
 } from "@mui/material";
+import { useContext } from "react";
 
 import { useState } from "react";
 
 import { Link,useNavigate } from "react-router-dom";
+import { AuthContext } from "./PrivateRoute/AuthContext";
 
 
 
 
 export const Login = () => {
   const [text, setText] = useState();
+  // const [token, setToken] = useState();
   const navigate=useNavigate()
+const {handleAuth}=useContext(AuthContext)
 
+console.log(handleAuth)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +46,7 @@ export const Login = () => {
           password: password,
         };
       }
-      console.log(payload);
+      // console.log(payload);
 
       let res = await fetch("http://localhost:4000/login", {
         method: "POST",
@@ -52,13 +57,23 @@ export const Login = () => {
       });
     //   console.log(res)
       let data = await res.json();
+      console.log(data.token)
+      localStorage.setItem("token",data.token)
+      handleAuth()
+      // console.log(data.token,"dfghjhgfdsfghgfdfg87456845")
+      if(data.token){
+        alert("Login successful")
       navigate("/dashboard");
+      }else{
+        alert("Your user ID or password is incorrect")
+      }
     } catch (error) {
       console.log({ message: error.message });
     }
   };
 
   return (
+    
     <Container component="main" sx={{ m: 5, mx: "auto" }} maxWidth="sm">
       <Avatar sx={{ width: 100, height: 100, m: 5, mx: "auto" }}>SS</Avatar>
       <Box component="form">
@@ -97,7 +112,7 @@ export const Login = () => {
             <Button
               variant="contained"
               type="submit"
-              sx={{}}
+              sx={{width:'25%'}}
               onClick={loginReq}
             >
               Login

@@ -1,13 +1,27 @@
-.dashboard{
+.container{
     width: 100%;
+    background-color: #f5efef;
+
+    
+}
+.dashboard{
+    /* width: 100%; */
     display: flex;
     justify-content: space-around;
-    background-color: rgb(78, 60, 181);
+  
+    /* height: 100%; */
    
 }
 .dashboard .box{
-    margin-top:20vh ;
+    margin-top:5vh ;
 }
-.box div{
+/* .box div{
     text-align: center;
+} */
+h4{
+    margin: 0;
+    margin-top: 10px;
+}
+h3{
+    margin: 0;
 }

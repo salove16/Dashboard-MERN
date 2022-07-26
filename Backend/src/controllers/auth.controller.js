@@ -20,7 +20,7 @@ const register = async (req, res) => {
     const token = generateToken(user);
     return res.status(200).send({ user, token });
   } catch (err) {
-    res.status(400).send({ message: err.message });
+    res.status(400).send({ message: "undefined" });
   }
 };
 

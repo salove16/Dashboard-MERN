@@ -6,11 +6,20 @@ import {Login} from "./components/login"
 // import { Sidebar } from './components/Sidebar/Sidebar';
 import {RouterComponent} from "./components/Router/Router"
 import {Routes,Route} from "react-router-dom"
+import {AuthContext} from "./components/PrivateRoute/AuthContext"
+import { useContext } from 'react';
+import { useEffect } from 'react';
 function App() {
+const {handleAuth,checkAuth}=useContext(AuthContext)
 
+useEffect(()=>{
+handleAuth()
+checkAuth()
+},[])
 
   return (
     <div className="App">
+      
       {/* <Sidebar/> */}
 {/* <Login/>
      <SignUp/> */}

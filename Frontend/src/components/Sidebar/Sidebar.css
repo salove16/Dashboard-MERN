@@ -1,7 +1,8 @@
 .app{
     /* width: 100vw; */
-    height: 100%;
+    height: 100vh;
     display: flex;
+    /* border: 1px solid black; */
 }
 
 body{
@@ -12,7 +13,7 @@ body{
   .Sidebar{
     height: 100%;
     width: 250px;
-    background-color: rgb(111, 122, 122);
+    background-color: #48514f;
 
   }
 
