@@ -3,6 +3,10 @@
 
 open 2 terminal
 
-cd server npm i or npm install npm start
+##cd Backend 
+##npm i or npm install
+##npm run server
 
-cd client npm i or npm install npm start
+##cd  Frontend 
+##npm i or npm install 
+##npm run dev
