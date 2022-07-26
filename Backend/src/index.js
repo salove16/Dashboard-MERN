@@ -29,10 +29,10 @@ app.use("/employee", employeeController);
 
 
 
-app.listen(4000, async () => {
+app.listen(8000, async () => {
   try {
     await connect();
-    console.log("port is listening to 4000");
+    console.log("port is listening to 8000");
   } catch (err) {
     console.log(err);
   }
